@@ -26,18 +26,28 @@ const fs = require("fs");
 // });
 
 // directories
-if (!fs.existsSync('./assets')) {
-	fs.mkdir("./assets", (err) => {
-		if (err) {
-			console.log(err);
-		}
-		console.log("Folder Created");
-	});
-} else {
-	fs.rmdir("./assets", (err) => {
-		if (err) {
-			console.log(err);
-		}
-		console.log("Folder Deleted");
-	});
+// if (!fs.existsSync('./assets')) {
+// 	fs.mkdir("./assets", (err) => {
+// 		if (err) {
+// 			console.log(err);
+// 		}
+// 		console.log("Folder Created");
+// 	});
+// } else {
+// 	fs.rmdir("./assets", (err) => {
+// 		if (err) {
+// 			console.log(err);
+// 		}
+// 		console.log("Folder Deleted");
+// 	});
+// }
+
+// deleting files
+if (fs.existsSync('./docs/deleteme.txt')) {
+  fs.unlink('./docs/deleteme.txt', (err) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log('File Deleted')
+  })
 }
